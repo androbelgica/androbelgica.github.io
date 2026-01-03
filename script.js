@@ -76,8 +76,13 @@ async function fetchRepos() {
                 if (!repo.fork) { // Only show original projects
                     const card = document.createElement('div');
                     card.className = 'experience-card glass reveal active';
+                    const ogImageUrl = `https://opengraph.githubassets.com/1/${GITHUB_USERNAME}/${repo.name}`;
+                    
                     card.innerHTML = `
                         <div class="project-card">
+                            <div class="project-image-container">
+                                <img src="${ogImageUrl}" alt="${repo.name} Preview" class="project-image" onerror="this.src='hero-bg.png'">
+                            </div>
                             <div>
                                 ${repo.language ? `<span class="repo-lang">${repo.language}</span>` : ''}
                                 <h3>${repo.name}</h3>
