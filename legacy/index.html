@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andro A. Belgica | Portfolio</title>
+    <meta name="description" content="Portfolio of Andro A. Belgica - Tech Support Staff and Developer. Experienced in hardware, software, and web development.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/your-font-awesome-kit.js" crossorigin="anonymous"></script> <!-- User might need to replace this, or I use direct SVGs/CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <nav id="navbar">
+        <div class="container">
+            <div class="logo">AB<span>.</span></div>
+            <ul class="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-toggle" id="nav-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section id="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h2 class="reveal">Hello, I'm</h2>
+                    <h1 class="reveal">Andro A. Belgica</h1>
+                    <p class="reveal">Tech Support Specialist & Software Developer</p>
+                    <div class="hero-cta reveal">
+                        <a href="#experience" class="btn btn-primary">View My Work</a>
+                        <a href="resume.md" class="btn btn-secondary">Download Resume</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience">
+            <div class="container">
+                <h2 class="section-title reveal">Work Experience</h2>
+                <div class="experience-grid">
+                    <!-- Belgica Law Office -->
+                    <div class="experience-card glass reveal">
+                        <div class="exp-header">
+                            <h3>Tech Support Staff</h3>
+                            <span class="date">2022 – Present</span>
+                        </div>
+                        <p class="company">Belgica Law Office</p>
+                        <ul>
+                            <li>Manages and troubleshoots hardware and software problems for desktops, laptops, and printers.</li>
+                            <li>Develops and maintains desktop applications used in daily office transactions.</li>
+                        </ul>
+                    </div>
+
+                    <!-- City Government of Parañaque -->
+                    <div class="experience-card glass reveal">
+                        <div class="exp-header">
+                            <h3>Legislative Tech Support Staff</h3>
+                            <span class="date">2013 – 2022</span>
+                        </div>
+                        <p class="company">City Government of Parañaque</p>
+                        <ul>
+                            <li>Maintains computers and peripherals for hardware and software issues.</li>
+                            <li>Creates layouts and templates for logos, shirts, mugs, stickers, and large-format designs.</li>
+                            <li>Develops and maintains desktop applications.</li>
+                            <li>Handles database management.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Antipuesto Realty -->
+                    <div class="experience-card glass reveal">
+                        <div class="exp-header">
+                            <h3>Technical Support / Data Encoder</h3>
+                            <span class="date">2008 – 2013</span>
+                        </div>
+                        <p class="company">Antipuesto Realty and Dev’t Corp.</p>
+                        <ul>
+                            <li>Handled computer troubleshooting and maintenance.</li>
+                            <li>Maintained databases and network systems.</li>
+                            <li>Encoded various business documents.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <div class="container">
+                <h2 class="section-title reveal">Open Source Projects</h2>
+                <div id="github-repos" class="projects-grid">
+                    <!-- Project cards will be injected here by script.js -->
+                    <div class="loader">Loading amazing projects...</div>
+                </div>
+                <div class="view-more reveal">
+                    <a href="https://github.com/androbelgica" target="_blank" class="btn btn-secondary">View All on GitHub</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <div class="container">
+                <h2 class="section-title reveal">Skills & Expertise</h2>
+                <div class="skills-grid">
+                    <div class="skill-category glass reveal">
+                        <h3><i class="fas fa-code"></i> Development</h3>
+                        <div class="skill-tags">
+                            <span>VB.NET</span>
+                            <span>C#</span>
+                            <span>Python</span>
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>JavaScript</span>
+                            <span>PHP</span>
+                            <span>MySQL</span>
+                        </div>
+                    </div>
+                    <div class="skill-category glass reveal">
+                        <h3><i class="fas fa-tools"></i> Technical</h3>
+                        <div class="skill-tags">
+                            <span>Hardware Servicing</span>
+                            <span>Software Troubleshooting</span>
+                            <span>Networking</span>
+                            <span>Microsoft Office 365</span>
+                            <span>Google Workspace</span>
+                        </div>
+                    </div>
+                    <div class="skill-category glass reveal">
+                        <h3><i class="fas fa-paint-brush"></i> Design</h3>
+                        <div class="skill-tags">
+                            <span>Photoshop</span>
+                            <span>SketchUp</span>
+                            <span>V-Ray</span>
+                            <span>Graphics Design</span>
+                            <span>3D Modeling</span>
+                        </div>
+                    </div>
+                    <div class="skill-category glass reveal">
+                        <h3><i class="fas fa-robot"></i> AI & Productivty</h3>
+                        <p>Leveraging AI tools for research, automation, software development assistance, debugging, and workflow optimization.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="education">
+            <div class="container">
+                <h2 class="section-title reveal">Education & Training</h2>
+                <div class="education-grid">
+                    <div class="edu-item glass reveal">
+                        <h3>Bachelor of Computer Science</h3>
+                        <p>Metro Business College | 2022 – 2023</p>
+                    </div>
+                    <div class="edu-item glass reveal">
+                        <h3>Vocational: Computer System Servicing</h3>
+                        <p>TESDA NC II | 2015</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <h2 class="section-title reveal">Get In Touch</h2>
+                <div class="contact-card glass reveal">
+                    <p>I'm always open to new opportunities and collaborations.</p>
+                    <div class="contact-info">
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:androbelgica85@gmail.com">androbelgica85@gmail.com</a>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+639772774819</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Andro A. Belgica. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
