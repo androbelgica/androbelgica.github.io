@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Phone, Facebook, MessageSquare, Send } from 'lucide-react';
+import { Mail, Phone, Linkedin, MessageSquare, Send } from 'lucide-react';
 
 const Contact = () => {
   const contactInfo = [
@@ -19,10 +19,10 @@ const Contact = () => {
       color: 'purple'
     },
     {
-      icon: <Facebook className="text-indigo-500" />,
-      label: 'Facebook Account',
+      icon: <Linkedin className="text-indigo-500" />,
+      label: 'LinkedIn Account',
       value: 'Andro Belgica',
-      href: 'https://facebook.com/andro.belgica.7', // placeholder, user can update
+      href: 'https://linkedin.com/in/andro-belgica-bb18b82a4',
       color: 'indigo'
     },
   ];
@@ -31,14 +31,14 @@ const Contact = () => {
     <section id="contact" className="py-24 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             className="text-primary-600 font-bold uppercase tracking-widest text-sm mb-2"
           >
             Get In Touch
           </motion.p>
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             className="text-4xl font-extrabold text-slate-900"
@@ -71,7 +71,7 @@ const Contact = () => {
         </div>
 
         {/* Optional: Simple Contact Form or just a CTA */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           className="mt-16 glass p-8 md:p-12 rounded-[3rem] bg-gradient-to-br from-white/80 to-slate-50/50 max-w-4xl mx-auto text-center"
@@ -80,8 +80,8 @@ const Contact = () => {
           <p className="text-slate-600 mb-8 max-w-2xl mx-auto">
             Whether you have a hardware issue that needs solving, a custom software project in mind, or just want to connect, I'm always ready to help.
           </p>
-          <a 
-            href="mailto:androbelgica85@gmail.com" 
+          <a
+            href="mailto:androbelgica85@gmail.com"
             className="inline-flex items-center space-x-3 px-10 py-5 bg-primary-600 text-white rounded-2xl font-bold shadow-xl shadow-primary-200 hover:bg-primary-700 transition-all transform hover:scale-105"
           >
             <Send size={20} />

@@ -27,15 +27,15 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className={`glass rounded-2xl px-6 py-3 flex justify-between items-center transition-all ${scrolled ? 'shadow-lg' : 'shadow-none'}`}>
           <div className="flex-shrink-0 flex items-center">
-            <motion.span 
+            <motion.span
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               className="text-2xl font-extrabold tracking-tighter text-primary-900"
             >
-              ANDRO<span className="text-primary-500">BELGICA</span>
+              ANDRO<span className="text-primary-500">_BELGICA</span>
             </motion.span>
           </div>
-          
+
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
               {navLinks.map((link, i) => (

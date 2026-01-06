@@ -10,7 +10,7 @@ const Footer = () => {
     <footer className="bg-slate-950 text-white pt-24 pb-12 overflow-hidden relative">
       {/* Decorative accent */}
       <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary-600 via-indigo-600 to-primary-600"></div>
-      
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div className="lg:col-span-2">
@@ -23,12 +23,12 @@ const Footer = () => {
             <div className="flex space-x-4">
               {[
                 { icon: <Mail size={20} />, href: "mailto:androbelgica85@gmail.com" },
-                { icon: <Linkedin size={20} />, href: "#" },
+                { icon: <Linkedin size={20} />, href: "https://linkedin.com/in/andro-belgica-bb18b82a4" },
                 { icon: <Github size={20} />, href: "#" }
               ].map((social, i) => (
-                <a 
+                <a
                   key={i}
-                  href={social.href} 
+                  href={social.href}
                   className="w-10 h-10 rounded-xl bg-slate-900 flex items-center justify-center border border-slate-800 hover:bg-primary-600 hover:border-primary-500 transition-all text-slate-400 hover:text-white"
                 >
                   {social.icon}
@@ -56,7 +56,7 @@ const Footer = () => {
           </div>
 
           <div className="flex flex-col items-start lg:items-end md:justify-start">
-            <button 
+            <button
               onClick={scrollToTop}
               className="group p-4 rounded-2xl bg-primary-600 text-white hover:bg-primary-700 transition-all shadow-xl shadow-primary-950 flex items-center space-x-2 font-bold"
             >
