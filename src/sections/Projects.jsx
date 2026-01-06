@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { ExternalLink, Github, Code, Layout, Database, Terminal, Globe, Map } from 'lucide-react';
+import { ExternalLink, Github, Code, Layout, Database, Terminal, Globe, Map, Info } from 'lucide-react';
 
 import interactiveMap1 from '../assets/feature_project_images/interactive_map/1.png';
 import interactiveMap2 from '../assets/feature_project_images/interactive_map/2.png';
@@ -54,24 +54,7 @@ const Projects = () => {
       githubLink: 'https://github.com/androbelgica/Subdivision_Interactive-Map',
       hideCaseStudy: true,
     },
-    {
-      title: 'Design Hub & Templates',
-      category: 'Graphic Design',
-      description: 'A comprehensive collection of large-format designs and branding templates for official city merchandise and logos.',
-      tech: ['Photoshop', 'CorelDraw', 'Asset Management'],
-      icon: <Code className="text-indigo-500" />,
-      image: 'https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&q=80&w=800',
-      githubLink: '#',
-    },
-    {
-      title: 'Hardware Diagnostic Toolkit',
-      category: 'Automation',
-      description: 'Custom Python scripts designed to automate hardware health checks and network monitoring across office infrastructure.',
-      tech: ['Python', 'Network API', 'Automation'],
-      icon: <Terminal className="text-amber-500" />,
-      image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800',
-      githubLink: '#',
-    },
+
   ];
 
   return (
@@ -192,6 +175,22 @@ const Projects = () => {
             </motion.div>
           ))}
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-16 bg-slate-50 border border-slate-200 rounded-2xl p-8 text-center max-w-3xl mx-auto"
+        >
+          <div className="inline-flex p-3 bg-white rounded-xl shadow-sm mb-4 text-primary-600">
+            <Info size={24} />
+          </div>
+          <h3 className="text-xl font-bold text-slate-900 mb-2">More Projects In The Works</h3>
+          <p className="text-slate-600">
+            This portfolio is actively evolving. I'm currently documenting and migrating additional projects
+            from my development archives and GitHub repositories. Check back soon for more updates!
+          </p>
+        </motion.div>
       </div>
     </section>
   );
