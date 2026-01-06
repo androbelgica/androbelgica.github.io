@@ -1,6 +1,37 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { ExternalLink, Github, Code, Layout, Database, Terminal, Globe } from 'lucide-react';
+import { ExternalLink, Github, Code, Layout, Database, Terminal, Globe, Map } from 'lucide-react';
+
+import interactiveMap1 from '../assets/feature_project_images/interactive_map/1.png';
+import interactiveMap2 from '../assets/feature_project_images/interactive_map/2.png';
+import interactiveMap3 from '../assets/feature_project_images/interactive_map/3.png';
+import interactiveMap4 from '../assets/feature_project_images/interactive_map/4.png';
+
+const ImageSlider = ({ images }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % images.length);
+    }, 3000);
+    return () => clearInterval(timer);
+  }, [images.length]);
+
+  return (
+    <div className="relative w-full h-full">
+      {images.map((img, index) => (
+        <motion.img
+          key={index}
+          src={img}
+          animate={{ opacity: index === currentIndex ? 1 : 0 }}
+          transition={{ duration: 1 }}
+          className="absolute inset-0 w-full h-full object-fill transition-transform duration-500 group-hover:scale-110"
+          alt={`Slide ${index + 1}`}
+        />
+      ))}
+    </div>
+  );
+};
 
 const Projects = () => {
   const projects = [
@@ -14,13 +45,14 @@ const Projects = () => {
       link: 'https://belgicalawph.netlify.app/',
     },
     {
-      title: 'Legislative Asset Manager',
-      category: 'System Maintenance',
-      description: 'Centralized database system for tracking legislative documents and peripherals for the Parañaque City Government.',
-      tech: ['C#', 'MySQL', '.NET Core'],
-      icon: <Layout className="text-purple-500" />,
-      image: 'https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&q=80&w=800',
-      githubLink: '#',
+      title: 'Subdivision Interactive Map',
+      category: 'Interactive Map',
+      description: 'A dynamic interactive map system for subdivision layout management and lot visualization.',
+      tech: ['React JS', 'TypeScript', 'Tailwind CSS', 'SQLite'],
+      icon: <Map className="text-purple-500" />,
+      images: [interactiveMap1, interactiveMap2, interactiveMap3, interactiveMap4],
+      githubLink: 'https://github.com/androbelgica/Subdivision_Interactive-Map',
+      hideCaseStudy: true,
     },
     {
       title: 'Design Hub & Templates',
@@ -47,14 +79,14 @@ const Projects = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div>
-            <motion.p 
+            <motion.p
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               className="text-primary-600 font-bold uppercase tracking-widest text-sm mb-2"
             >
               Selected Work
             </motion.p>
-            <motion.h2 
+            <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               className="text-4xl font-extrabold text-slate-900"
@@ -62,7 +94,7 @@ const Projects = () => {
               Recent Projects
             </motion.h2>
           </div>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             className="text-slate-500 max-w-md"
@@ -83,11 +115,15 @@ const Projects = () => {
             >
               {/* Image Container */}
               <div className="relative h-64 overflow-hidden">
-                <img 
-                  src={project.image} 
-                  alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                />
+                {project.images ? (
+                  <ImageSlider images={project.images} />
+                ) : (
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                )}
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
                 <div className="absolute bottom-6 left-8 flex items-center space-x-2 text-white">
                   <div className="p-2 bg-white/20 backdrop-blur-md rounded-lg">
@@ -107,10 +143,10 @@ const Projects = () => {
                 <p className="text-slate-600 leading-relaxed mb-8">
                   {project.description}
                 </p>
-                
+
                 <div className="flex flex-wrap gap-2 mb-8">
                   {project.tech.map((t, i) => (
-                    <span 
+                    <span
                       key={i}
                       className="px-4 py-2 bg-white rounded-xl text-xs font-bold text-slate-500 border border-slate-100 shadow-sm"
                     >
@@ -121,8 +157,8 @@ const Projects = () => {
 
                 <div className="flex items-center space-x-6">
                   {project.link ? (
-                    <a 
-                      href={project.link} 
+                    <a
+                      href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center space-x-2 text-sm font-bold text-slate-900 hover:text-primary-600 transition-colors"
@@ -130,19 +166,19 @@ const Projects = () => {
                       <Globe size={18} />
                       <span>Live Website</span>
                     </a>
-                  ) : (
-                    <a 
-                      href="#" 
+                  ) : !project.hideCaseStudy ? (
+                    <a
+                      href="#"
                       className="flex items-center space-x-2 text-sm font-bold text-slate-900 hover:text-primary-600 transition-colors"
                       onClick={(e) => e.preventDefault()}
                     >
                       <ExternalLink size={18} />
                       <span>Case Study</span>
                     </a>
-                  )}
+                  ) : null}
                   {project.githubLink && (
-                    <a 
-                      href={project.githubLink} 
+                    <a
+                      href={project.githubLink}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center space-x-2 text-sm font-bold text-slate-900 hover:text-primary-600 transition-colors"
